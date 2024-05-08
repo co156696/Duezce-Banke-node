@@ -16,10 +16,10 @@ console.log("Aufgabe 2");
 console.log("gib das ergebnis der addition von a und b aus.");
 
 console.log(a+b);
-console.log('das ergebnis der addition:' + a+b);
+console.log('das ergebnis der addition:' + (a+b));
 
 console.log('aufgabe 3');
-console.log('gib das ergebnis der subtraktion, multipikation, division von a und b aus')
+console.log('gib das ergebnis der subtraktion, multipikation, division von a und b aus');
 
 console.log("subtraktion:"+ (a - b));
 console.log("multiplikation:"+ (a * b));
@@ -28,14 +28,14 @@ console.log("division:"+ (a / b));
 console.log('aufgabe 4');
 console.log('der wert c ei das ergebnis der addition a und b');
 
-let c = a+b
+let c = a+b;
 
 console.log("c hat den wert : " +c);
 
 console.log('aufgabe 5')
 console.log('a und b sind die seitenlängender katheten eines rechtwinkligen dreiecks. bestimme die länge der hypotenuse c')
 
-let cQuadrat = a*a + b*b;
+ let cQuadrat = a*a + b*b;
 
 c = Math.sqrt(cQuadrat);
 
@@ -45,18 +45,102 @@ console.log('aufgabe 6');
 console.log('ein kunden legt 100 auf dem sparbuch an. jedes jahr bekommt er 10% zinsen. wie viel bekommt der kunde');
 console.log('nach zwei jahren ausgezahlt. beachte den zinseszinseffekt')
 
-// Anfangskapital
-let p = 100; // Startkapital des Kunden
+console.log("Grundlagen");
+console.log("==========");
+ 
+console.log("Aufgabe 1");
+console.log("Erstelle zwei Variablen namens a und b. Initialisiere mit den Werten 1 und2")
+ 
+// Der Wert 1 wird zugewiesen (=) an eine Variable namens a.
+ a = 1;
+ b = 2;
+ 
+// MIt dem Plus-operator findet eine String-Verkettung statt. Ein String ist eine zeichenkette, eingerahmt mit hochkommas.
+console.log("Der wert der Variablen a ist:" +a);
+ 
+console.log("Aufgabe 2");
+console.log("Gib das Ergebnis der Addition von a und b aus.")
+ 
+// wenn links oder rechts vom Plusoperator ein Sttring steht wird verkettet.
+//Wenn links und rechts Zahlen stehen, wird addiert.
+console.log(a+b);
+console.log("Das ergebnis der addition:"+(a+b));
+ 
+console.log("Aufgabe 3");
+console.log("Gib das Ergebniss der Subtraktion, Multiplikation, Division von a und b aus.");
+ 
+console.log("Subtraktion:"+(a-b));
+console.log("Multiplikation:"+(a*b));
+console.log("Division:"+(a/b));
+ 
+console.log("Aufgabe 4");
+console.log("c ist das Ergebnis der Addition von a und b.");
+ 
+c =a + b;
+console.log("Der Wert von c ist:" +c);
+ 
+ 
+ 
+ 
+ 
+console.log("Aufgabe5")
+console.log(" a und b sind die Seitenlängen der Katheten eines rechtwinkligen Dtreiecks. Bestimme die Länge der Hypotenuse c")
+ 
+// cQuadrat ist in Kamelhöcker-Notation geschrieben. Das heisst: zuerst ein Kleinbuschtabe. Verbundene Wörter beginnen groß.
+cQuadrat= a*a+b*b;
+ 
+//Javascript kiennt eine Bibliothek namens Math in der Bibliothek gibt es eine Funktion namens sqrt. Als Parameter in den runden Klammern erwartet sqrt eine Zahl, aus der dann die Wurzel gezogen wird.
+c= Math.sqrt(cQuadrat);
+ 
+console.log("Die Hypotenuse ist" +c+" lang.");
+ 
+console.log('Aufgabe 6');
+console.log('Ein Kunde legt 100 Euro auf dem Sparbuch an. Jedes Jahr bekommt er 10% Zinsen. Wie viel bekommt der Kunde');
+console.log('nach zwei Jahren ausgezahlt. Beachte den Zinseszinseffekt.');
+ 
+let laufzeit = 2;
+let startkapital = 100;
+let zinssatz = 0.1;   /* Das Komma ist zur Entwicklungszeit ein Punkt. */
+ 
+let kapitalNachEinemJahr = startkapital * (1 + zinssatz);
+ 
+console.log("Kapital nach einem Jahr: " + kapitalNachEinemJahr + " EUR.");
+ 
+let kapitalNachZweiJahren = kapitalNachEinemJahr * (1 + zinssatz);
+ 
+console.log("Kapital nach zwei Jahren: " + kapitalNachZweiJahren + " EUR.");
+ 
+//let endkapital = Math.pow((startkapital * zinssatz) , laufzeit);
+ 
+let endkapital = startkapital * Math.pow(1 + zinssatz, laufzeit);
+ 
+console.log("Endkapital nach " + laufzeit + " Jahren: " + endkapital + " EUR.");
+ 
+console.log('Aufgabe 7');
+console.log('Die Reihe aus der vorherigen aufgabe werden als REihe dargestellt');
+ 
+//
+ endkapitalzubeginn = startkapital;
+console.log( 'endkapital');
+//
+endkapitalNachEinemJahr = startkapital * (1 + zinssatz);
+console.log ('endkapitalNachEinemJahr');
+//
+ endkapitalNachZweiJahren = startkapital * (1 + zinssatz);
+console.log ('endkapitalNachZweiJahren');
 
-// Zinssatz
-let r = 0.10; // 10%
 
-// Anzahl der Jahre
-let t = 2; 
+console.log('aufgabe 8')
+console.log('in aufgabe 7 wurde die anweisung endkapital.. mehrfach wiederholt')
+console.log('um sich tipparbeit zu sparen und die wiederholung der anweisung in der gewümschten häufigkeit durchzuführen nutzt der progarmmierer eine schleife')
 
-let kapitalNachEinemJahr= startkapital * (1 + zinssatz);
+starkapital= 100;
+endkapital=startkapital;
+zinssatz= 0.1;
+laufzeit= 3;
 
-// Ausgabe des Endbetrags
-console.log("kapital nach einem Jahr: "+ KapitalNachEinemJahr + "EUR.");
 
-let kapitalNachzweiJahr= KapitalNachEinemJahr * (1 + zinssatz);
+for (let i = 0; i < laufzeit; i++) {
+    startkapital = endkapital * (1+zinssatz);
+    console.log(endkapital);
+  }
