@@ -144,3 +144,38 @@ for (let i = 0; i < laufzeit; i++) {
     startkapital = endkapital * (1+zinssatz);
     console.log(endkapital);
   }
+
+
+console.log('aufgabe 9')
+console.log('wenn der artikel lebensmittel ist, dannist die MwSt 7%, ansonsten 19%')
+console.log('in excel würde das so aussehen: =wenn( A1= lebensmittel;7:19)')
+
+let artikel = 'lebensmittel';
+let Mwst = (artikel === "lebensmittel")? 7 : 19;
+
+// der ausdruck ist vergleichbar it excel. in den runden klammern findet die prüfung
+// auf wahr oder falsch statt. wenn article === "lebensmittel" wahr ist wird der
+//wert vor dem doppelpunkt zurückgegeben. ansonsten der wert hinter doppelpunkt 
+// ander als in excelist das einfache gleichheitszeichen 
+
+console.log ('der mehrwertsteuersatz für den artikel ' + artikel + ' beträgt ' + mwstSatz + '%');
+
+
+console.log('Aufgabe 10');
+console.log('Rabattberechnung:');
+console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 100 Euro ist, beträgt der Rabatt 20%.');
+console.log('Wenn der Gesamtbetrag des Einkaufs zwischen 50 und 99 Euro liegt, beträgt der Rabatt 10%.');
+console.log('Ansonsten gibt es keinen Rabatt.');
+
+let purchaseAmount = 120;
+let discount;
+
+if (purchaseAmount >= 100) {
+    discount = 20;
+} else if (purchaseAmount >= 50 && purchaseAmount <= 99) {
+    discount = 10;
+} else {
+    discount = 0;
+}
+
+console.log('Der Rabatt beträgt:', discount + '%');
