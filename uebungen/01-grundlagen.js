@@ -158,17 +158,37 @@ let Mwst = (artikel === "lebensmittel")? 7 : 19;
 //wert vor dem doppelpunkt zurückgegeben. ansonsten der wert hinter doppelpunkt 
 // ander als in excelist das einfache gleichheitszeichen 
 
-console.log ('der mehrwertsteuersatz für den artikel ' + artikel + ' beträgt ' + mwstSatz + '%');
+console.log ('der mehrwertsteuersatz für den artikel ' + artikel + ' beträgt '  + '%');
 
 
 console.log('Aufgabe 10');
 console.log('Rabattberechnung:');
 console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 100 Euro ist, beträgt der Rabatt 20%.');
+console.log('Ansonsten gibt es keinen Rabatt.');
+ 
+let Gesamtbetrag = 120;
+let discount;
+ 
+if (Gesamtbetrag >= 100) {
+    discount = 20;
+} else if (Gesamtbetrag >= 50 && Gesamtbetrag <= 99) {
+    discount = 10;
+} else {
+    discount = 0;
+}
+ 
+console.log('Der Rabatt beträgt:', discount + '%');
+
+
+
+console.log('Aufgabe 11');
+console.log('Rabattberechnung:');
+console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 100 Euro ist, beträgt der Rabatt 20%.');
 console.log('Wenn der Gesamtbetrag des Einkaufs zwischen 50 und 99 Euro liegt, beträgt der Rabatt 10%.');
 console.log('Ansonsten gibt es keinen Rabatt.');
 
-let purchaseAmount = 120;
-let discount;
+ purchaseAmount = 49;
+discount;
 
 if (purchaseAmount >= 100) {
     discount = 20;
@@ -179,3 +199,46 @@ if (purchaseAmount >= 100) {
 }
 
 console.log('Der Rabatt beträgt:', discount + '%');
+
+
+console.log('Aufgabe 12');
+console.log('Versandkostenberechnung:');
+console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 200 Euro ist, ist der Versand kostenlos.');
+console.log('Wenn der Gesamtbetrag des Einkaufs zwischen 100 und 199 Euro liegt, betragen die Versandkosten 5 Euro.');
+console.log('Ansonsten betragen die Versandkosten 10 Euro.');
+ 
+Gesamtbetrag = 150;
+ let versandkosten;
+ 
+if (Gesamtbetrag >= 200) {
+    versandkosten = 0;
+} else if (Gesamtbetrag >= 100 && Gesamtbetrag <= 199) {
+    versandkosten = 5;
+} else {
+    versandkosten = 10;
+}
+ 
+console.log('Die Versandkosten betragen:', versandkosten + ' Euro');
+ 
+let GesamtbetragMitVersand = Gesamtbetrag + versandkosten;
+console.log('Der Gesamtbetrag inklusive Versandkosten beträgt:', GesamtbetragMitVersand + ' Euro');
+
+console.log ('aufgabe 13');
+console.log('frauen ab 18 zahlen 10 euro eintritt. männer ab 18 zahlen 15 euro eintritt . minderjährige zahlen 6');
+
+let eintritt;
+let alter = 10;
+let geschlecht = 'm' 
+
+if (geschlecht ===  'w' && alter >== 18){
+    eintritt = 10
+} 
+
+if (geschlecht ===  'w' && alter >== 18){
+    eintritt = 15
+}
+if (alter < 18){
+    eintritt= 6;
+}
+
+console.log( ' bei einem alter von ' + alter +' jahren zahlt eine person mit geschlecht ' + geschlecht+ ''+ eintritt + 'euro');
