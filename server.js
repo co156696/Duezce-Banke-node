@@ -10,11 +10,13 @@ const express = require('express');
 // Constants
 // die nweisungen werden von oben nach unten abgearbeitet. Der Wert 3000 wird von rechts nach links
 // zugewiesen an die konstante namens PORT. Das einfache glecihheitszeichen lässt sich also übersetzen mit "...wird zugewiesen"
-const PORT = 3000;
+const PORT = 4000;
 const HOST = '0.0.0.0';
 
 // App
 const app = express();
+// es wird der app bekannt gegeben, wo die styles zu finden sind 
+app.use(express.static('public'))
 app.get('/', (req, res) => {
 
 	// res ist die Antwort des Servers an den Browser 
@@ -26,6 +28,12 @@ app.get('/', (req, res) => {
 	// Das res Objekt kann mit der funktion render() eine HTML datei an der browser senden
 	res.render("index.ejs", {});
 });
+//die angefragte seite wird an server zurückgegeben
+//dazu arbeitet der server die fuktion (hier drunter) ab 
+app.get('agb' , (req , res) => {
+	res.render('agb.ejs' , {});  
+});
+
 
 // mit listen wird der server angewiesen, auf den angegebenen POST und PORT zu lauschen 
 app.listen(PORT, HOST);
@@ -38,4 +46,5 @@ app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 
 //mit der funktion requie wir die datei in die klammern eingelesen
-require ('./uebungen/boolean.js');
+//require ('./uebungen/boolean.js');
+//require ('./uebungen/04-funktionen.js');
