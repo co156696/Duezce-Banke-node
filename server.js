@@ -10,7 +10,7 @@ const express = require('express');
 // Constants
 // die nweisungen werden von oben nach unten abgearbeitet. Der Wert 3000 wird von rechts nach links
 // zugewiesen an die konstante namens PORT. Das einfache glecihheitszeichen lässt sich also übersetzen mit "...wird zugewiesen"
-const PORT = 4000;
+const PORT = 3000;
 const HOST = '0.0.0.0';
 
 // App
@@ -30,11 +30,24 @@ app.get('/', (req, res) => {
 });
 //die angefragte seite wird an server zurückgegeben
 //dazu arbeitet der server die fuktion (hier drunter) ab 
-app.get('agb' , (req , res) => {
+app.get('/agb' , (req , res) => {
 	res.render('agb.ejs' , {});  
 });
+app.get('/hilfe' , (req , res) => {
+	res.render('hilfe.ejs' , {});  
+});
 
+app.get('/index' , (req , res) => {
+	res.render('index.ejs' , {});  
+});
 
+app.get('/konten' , (req , res) => {
+	res.render('konten.ejs' , {});  
+});
+
+app.get('/login' , (req , res) => {
+	res.render('login.ejs' , {});  
+});
 // mit listen wird der server angewiesen, auf den angegebenen POST und PORT zu lauschen 
 app.listen(PORT, HOST);
 
